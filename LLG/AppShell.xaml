@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="LLG.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:local="clr-namespace:LLG"
+    xmlns:views="clr-namespace:LLG.Views"
+    Shell.FlyoutBehavior="{OnPlatform WinUI=Locked, MacCatalyst=Locked, Android=Flyout, iOS=Flyout}"
+    Shell.BackgroundColor="#1976D2"
+    Shell.TitleColor="White"
+    Shell.ForegroundColor="White"
+    
+    >
+
+    <Shell.FlyoutHeader>
+        <VerticalStackLayout 
+            BackgroundColor="#1976D2"
+            Padding="20"
+            HeightRequest="200"
+            VerticalOptions="End">
+
+            <Image Source="dotnet_bot.png"
+                   HeightRequest="100"
+                   WidthRequest="100"
+                   HorizontalOptions="Center" 
+                   Margin="0,0,0,10"/>
+
+            <Label Text="TRINI APP"
+                   TextColor="White"
+                   FontSize="20"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center" />
+        </VerticalStackLayout>
+    </Shell.FlyoutHeader>
+
+    <FlyoutItem Title="Dashboard" Icon="dotnet_bot.png">
+        <ShellContent ContentTemplate="{DataTemplate views:DashboardPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Mes Séances" Icon="dotnet_bot.png">
+        <ShellContent ContentTemplate="{DataTemplate views:SessionsPage}" />
+    </FlyoutItem>
+
+    <FlyoutItem Title="Statistiques" Icon="dotnet_bot.png">
+        <ShellContent ContentTemplate="{DataTemplate views:StatsPage}" />
+    </FlyoutItem>
+
+    <MenuItem Text="Paramètres" IconImageSource="dotnet_bot.png"/>
+
+</Shell>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LLG.Views.DashboardPage"
+             Title="Dashboard"
+             BackgroundColor="White">
+
+    <Grid RowDefinitions="Auto, *,*,*">
+
+        <Label Grid.Row="0" 
+               Text="Le contenu commence ici, tout en haut !" 
+               Padding="20"
+               FontSize="18"
+               TextColor="Black"/>
+
+        <BoxView Grid.Row="1" 
+                 Color="#E3F2FD" 
+                 Margin="20" />
+
+        <Label Grid.Row="1" 
+               Text="Zone qui remplit le reste de l'écran"
+               VerticalOptions="Center" 
+               HorizontalOptions="Center"
+               TextColor="#1565C0"/>
+
+    </Grid>
+
+</ContentPage>
