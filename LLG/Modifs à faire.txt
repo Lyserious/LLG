@@ -1,4 +1,6 @@
-﻿Général:
+﻿<-Triés par ordre d'importance par catégorie->
+
+Général:
 -Title bar qui se fait empiété par flyout en mode Locked
 -Diminuer taille flyout
 -Modifier les icones pour mettre les bonnes images
@@ -9,7 +11,11 @@ Dashboard:
 
 ____________________________________________________________________________________________________________________________________
 Sessions:
--
+-Créer un système de catalogue pour les lieu 
+-Réparer partie lieu dans les scénaces ( pr le moment il ne les prend pas en compte et ne les enregistre pas )
+-Créer une différence entre les commentaires par voies et les commentaires par essais d'une voie 
+-Créer un système de catalogue pour les voies avec système d'ajout automatique et qui retient en fctn des lieux 
+
 ____________________________________________________________________________________________________________________________________
 Stats:
 -

@@ -1,5 +1,6 @@
 ﻿using LLG.ViewModels;
 using LLG.Views;
+using LLG.Services;
 using Microsoft.Extensions.Logging;
 
 namespace LLG
@@ -16,8 +17,8 @@ namespace LLG
                     fonts.AddFont("OpenSans-Regular.ttf", "OpenSansRegular");
                     fonts.AddFont("OpenSans-Semibold.ttf", "OpenSansSemibold");
                 });
-            //// 1. SERVICES
-            //builder.Services.AddSingleton<SessionsService>();
+            // 1. SERVICES
+            builder.Services.AddSingleton<SessionsService>();
 
             //// 2. VIEWMODELS
             //builder.Services.AddTransient<DashboardViewModel>();
