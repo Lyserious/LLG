@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LLG.Views.LoginPage"
+             BackgroundColor="#121212">
+
+    <VerticalStackLayout Spacing="20" VerticalOptions="Center" Padding="30">
+        <Image Source="dotnet_bot.svg" HeightRequest="100"/>
+        <Label Text="Bienvenue sur LLG" TextColor="White" FontSize="24" HorizontalOptions="Center"/>
+
+        <Entry x:Name="PseudoEntry" Placeholder="Entre ton pseudo" TextColor="White" BackgroundColor="#1E1E1E"/>
+
+        <Button Text="Se Connecter" 
+                Clicked="OnLoginClicked" 
+                BackgroundColor="#009688" TextColor="White" FontAttributes="Bold"/>
+    </VerticalStackLayout>
+</ContentPage>
