@@ -45,6 +45,33 @@
         <ShellContent ContentTemplate="{DataTemplate views:StatsPage}" />
     </FlyoutItem>
 
-    <MenuItem Text="Paramètres" IconImageSource="dotnet_bot.png"/>
+    <FlyoutItem Title="Projet" Icon="dotnet_bot.png">
+        <ShellContent ContentTemplate="{DataTemplate views:ProjectsPage}" />
+    </FlyoutItem>
+    
+    
+    <!--<MenuItem Text="Paramètres" IconImageSource="dotnet_bot.png"/>
+    071009 explorer l'idée générale de MenuItem-->
+    <Shell.FlyoutFooter>
+        <Grid BackgroundColor="#121212">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="1" />
+                <RowDefinition Height="Auto" />
+            </Grid.RowDefinitions>
+            <BoxView Grid.Row="0" Color="White" Opacity="0.1" VerticalOptions="Start" />
+
+            <Grid Grid.Row="1" Padding="0" HeightRequest="55">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                <Grid.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnSettingsClicked" />
+                </Grid.GestureRecognizers>
+                <Image Grid.Column="0" Source="dotnet_bot.svg" HeightRequest="22" WidthRequest="22" HorizontalOptions="Center" />
+                <Label Grid.Column="1" Text="Paramètres" TextColor="White" FontSize="15" FontAttributes="Bold" VerticalOptions="Center" />
+            </Grid>
+        </Grid>
+    </Shell.FlyoutFooter>
 
 </Shell>

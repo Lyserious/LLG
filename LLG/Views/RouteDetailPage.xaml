@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="LLG.Views.RouteDetailPage"
+             Title="Détail de la voie"
+             BackgroundColor="{StaticResource DarkBackground}">
+
+    <ScrollView>
+        <VerticalStackLayout Spacing="20" Padding="20">
+            <Label Text="Nouvelle ascension" TextColor="White" FontSize="18" FontAttributes="Bold"/>
+
+            <Picker Title="Type" SelectedItem="{Binding Type}" TextColor="White" TitleColor="Gray" BackgroundColor="{StaticResource CardBackground}">
+                <Picker.ItemsSource>
+                    <x:Array Type="{x:Type x:String}">
+                        <x:String>Voie</x:String>
+                        <x:String>Bloc</x:String>
+                    </x:Array>
+                </Picker.ItemsSource>
+            </Picker>
+
+            <Entry Placeholder="Nom de la voie..." Text="{Binding Name}" TextColor="White" PlaceholderColor="Gray"/>
+
+            <Grid ColumnDefinitions="*,*">
+                <Picker Grid.Column="0" 
+                    Title="Cotation" 
+                    SelectedItem="{Binding Grade}" 
+                    TextColor="White" 
+                    TitleColor="Gray" 
+                    BackgroundColor="{StaticResource CardBackground}">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>3</x:String>
+                            <x:String>4a</x:String>
+                            <x:String>4b</x:String>
+                            <x:String>4c</x:String>
+                            <x:String>5a</x:String>
+                            <x:String>5a+</x:String>
+                            <x:String>5b</x:String>
+                            <x:String>5b+</x:String>
+                            <x:String>5c</x:String>
+                            <x:String>5c+</x:String>
+                            <x:String>6a</x:String>
+                            <x:String>6a+</x:String>
+                            <x:String>6b</x:String>
+                            <x:String>6b+</x:String>
+                            <x:String>6c</x:String>
+                            <x:String>6c+</x:String>
+                            <x:String>7a</x:String>
+                            <x:String>7a+</x:String>
+                            <x:String>7b</x:String>
+                            <x:String>7b+</x:String>
+                            <x:String>7c</x:String>
+                            <x:String>7c+</x:String>
+                            <x:String>8a</x:String>
+                            <x:String>8a+</x:String>
+                            <x:String>8b</x:String>
+                            <x:String>8b+</x:String>
+                            <x:String>8c</x:String>
+                            <x:String>8c+</x:String>
+                            <x:String>9a</x:String>
+                            <x:String>9a+</x:String>
+                            <x:String>9b</x:String>
+                            <x:String>9b+</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+
+                <Picker Grid.Column="1" Title="Style" SelectedItem="{Binding Style}" TextColor="White" TitleColor="Gray" BackgroundColor="{StaticResource CardBackground}">
+                    <Picker.ItemsSource>
+                        <x:Array Type="{x:Type x:String}">
+                            <x:String>En tête</x:String>
+                            <x:String>Moulinette</x:String>
+                            <x:String>Solo</x:String>
+                        </x:Array>
+                    </Picker.ItemsSource>
+                </Picker>
+            </Grid>
+
+            <Border BackgroundColor="{StaticResource CardBackground}" StrokeShape="RoundRectangle 5" Padding="10">
+                <VerticalStackLayout>
+                    <Grid ColumnDefinitions="*, Auto">
+                        <Label Text="Réussie ?" TextColor="White" VerticalOptions="Center"/>
+                        <CheckBox Grid.Column="1" IsChecked="{Binding IsSuccessful}" Color="{StaticResource PrimaryTeal}"/>
+                    </Grid>
+                    <HorizontalStackLayout Spacing="10" Margin="0,10,0,0">
+                        <Label Text="Nombre d'essais :" TextColor="Gray" VerticalOptions="Center"/>
+                        <Entry Text="{Binding Attempts}" Keyboard="Numeric" WidthRequest="50" TextColor="White" HorizontalTextAlignment="Center"/>
+                    </HorizontalStackLayout>
+                </VerticalStackLayout>
+            </Border>
+
+            <Editor Placeholder="Commentaires sur la voie (mouvements, prises...)" 
+                    Text="{Binding Notes}" 
+                    HeightRequest="80" 
+                    TextColor="White" 
+                    PlaceholderColor="Gray"
+                    BackgroundColor="{StaticResource CardBackground}"/>
+
+            <Button Text="Valider" Clicked="OnValidateClicked" BackgroundColor="{StaticResource PrimaryTeal}" TextColor="White" FontAttributes="Bold" Margin="0,10,0,0"/>
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

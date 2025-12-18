@@ -1,23 +1,20 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using SQLite;
 
 namespace LLG.Models;
 
 public class ClimbingRoute
 {
-    public int Id { get; set; } // Identifiant unique
+    [PrimaryKey, AutoIncrement]
+    public int Id { get; set; }
+    public int ClimbingSessionId { get; set; } 
 
-    public string Grade { get; set; } // Cotation (ex: "6a", "7b+")
-
-    // Style de grimpe : "Voie" ou "Bloc"
-    public string Style { get; set; }
-
-    // Résultat : "OnSight" (A vue), "Flash", "Redpoint" (Après travail), "Failed" (Echec)
-    public string Status { get; set; }
-
-    public string Note { get; set; } // Commentaire optionnel sur la voie
-
-    // Pour l'affichage facile dans la liste (ex: "6a - Flash")
-    public string DisplayInfo => $"{Grade} - {Status}";
+    // Ajoute les '?' ici
+    public string? Name { get; set; } 
+    public string? Grade { get; set; } 
+    public string? Type { get; set; } = "Voie"; 
+    public string? Style { get; set; } 
+    
+    public bool IsSuccessful { get; set; }
+    public int Attempts { get; set; } 
+    public string? Notes { get; set; }
 }
