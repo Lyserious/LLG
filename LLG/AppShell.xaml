@@ -9,7 +9,7 @@
     Shell.BackgroundColor="#1976D2"
     Shell.TitleColor="White"
     Shell.ForegroundColor="White"
-    
+    Shell.FlyoutBackgroundColor="#121212"
     >
 
     <Shell.FlyoutHeader>
