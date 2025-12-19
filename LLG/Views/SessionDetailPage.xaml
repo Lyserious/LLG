@@ -68,11 +68,12 @@
                                     <Label Text="{Binding Style}" TextColor="Gray" FontSize="10"/>
                                 </VerticalStackLayout>
 
-                                <Label Grid.Column="1" 
-       Text="{Binding Grade}" 
-       FontAttributes="Bold" 
-       VerticalOptions="Center" 
-       Margin="10,0">
+                                <Label 
+                                    Grid.Column="1" 
+                                    Text="{Binding Grade}" 
+                                    FontAttributes="Bold" 
+                                    VerticalOptions="Center" 
+                                    Margin="10,0">
                                     <Label.Triggers>
                                         <DataTrigger TargetType="Label" Binding="{Binding IsSuccessful}" Value="True">
                                             <Setter Property="TextColor" Value="#00E676" />

@@ -4,7 +4,7 @@ using LLG.Services;
 
 namespace LLG.Views;
 
-// On retire [QueryProperty] et on ajoute l'interface IQueryAttributable
+
 public partial class SessionDetailPage : ContentPage, IQueryAttributable
 {
     private readonly SessionsService _service;
@@ -22,10 +22,10 @@ public partial class SessionDetailPage : ContentPage, IQueryAttributable
         BindingContext = this;
     }
 
-    // CETTE MÉTHODE MAGIQUE S'ACTIVE QUAND ON ARRIVE SUR LA PAGE
+    
     public void ApplyQueryAttributes(IDictionary<string, object> query)
     {
-        // CAS 1 : On arrive depuis la liste des Séances (On charge la séance)
+        
         if (query.ContainsKey("Session"))
         {
             CurrentSession = query["Session"] as ClimbingSession;
@@ -33,29 +33,29 @@ public partial class SessionDetailPage : ContentPage, IQueryAttributable
             LoadExistingRoutes();
         }
 
-        // CAS 2 : On revient de la page "Ajout Voie" (On ajoute la voie)
+        
         if (query.ContainsKey("ReturnedRoute"))
         {
             var route = query["ReturnedRoute"] as ClimbingRoute;
 
-            // On vérifie si c'est une modif ou un ajout
+            
             var existing = TemporaryRoutes.FirstOrDefault(r =>
                 (r.Id != 0 && r.Id == route.Id) || r == route);
 
             if (existing != null)
             {
-                // Modification
+                
                 int index = TemporaryRoutes.IndexOf(existing);
                 TemporaryRoutes[index] = route;
             }
             else
             {
-                // Ajout
+                
                 TemporaryRoutes.Add(route);
             }
         }
 
-        // Petit nettoyage pour éviter de recharger 2 fois les données si on reclique
+        
         query.Clear();
     }
 
@@ -63,7 +63,7 @@ public partial class SessionDetailPage : ContentPage, IQueryAttributable
     {
         if (CurrentSession != null && CurrentSession.Id != 0)
         {
-            // On ne recharge que si la liste est vide (pour ne pas écraser les ajouts récents)
+            
             if (TemporaryRoutes.Count == 0)
             {
                 var routes = await _service.GetRoutesForSessionAsync(CurrentSession.Id);
@@ -72,7 +72,7 @@ public partial class SessionDetailPage : ContentPage, IQueryAttributable
         }
     }
 
-    // --- LE RESTE NE CHANGE PAS ---
+    
 
     private async void OnAddRouteClicked(object sender, EventArgs e)
     {
