@@ -57,7 +57,7 @@
     <!--<MenuItem Text="Paramètres" IconImageSource="dotnet_bot.png"/>
     071009 explorer l'idée générale de MenuItem-->
     <Shell.FlyoutFooter>
-        <Grid BackgroundColor="#121212">
+        <Grid BackgroundColor="Transparent">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1" />
                 <RowDefinition Height="Auto" />
