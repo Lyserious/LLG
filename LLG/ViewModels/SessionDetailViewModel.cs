@@ -21,7 +21,6 @@ public partial class SessionDetailViewModel : ObservableObject
     [ObservableProperty]
     private string? name;
 
-    // "LocationName" dans le ViewModel correspondra à "Place" dans la base de données
     [ObservableProperty]
     private string? locationName;
 
@@ -61,7 +60,7 @@ public partial class SessionDetailViewModel : ObservableObject
 
             // On fait le lien entre tes champs et la base de données :
             Name = Name,                // Le Titre
-            Place = LocationName,       // Le Lieu (Lieu inconnu si vide)
+            LocationName = LocationName,       // Le Lieu (Lieu inconnu si vide)
             IsIndoors = IsIndoors,
 
             InitialMood = InitialMood,

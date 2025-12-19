@@ -11,9 +11,9 @@
             <Label Text="Infos Séance" TextColor="White" FontSize="18" FontAttributes="Bold"/>
             <Label Text="Nom de la séance" TextColor="#009688"/>
             <Entry Text="{Binding CurrentSession.Name}" Placeholder="ex: Benmoon" TextColor="White"/>
-            <Entry Placeholder="Lieu (ex: Arkose)" 
-                   Text="{Binding CurrentSession.LocationName}" 
-                   TextColor="White" PlaceholderColor="Gray"/>
+            <Entry Text="{Binding CurrentSession.LocationName}" Placeholder="Lieu (ex: Arkose)" TextColor="White" PlaceholderColor="Gray"/>
+                    
+
 
             <Grid ColumnDefinitions="*,*">
                 <Entry Grid.Column="0" 
