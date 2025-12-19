@@ -20,24 +20,21 @@
     
     
     <Shell.FlyoutHeader>
-        <VerticalStackLayout 
-            BackgroundColor="#1976D2"
-            Padding="20"
-            HeightRequest="200"
-            VerticalOptions="End">
-
+        <Grid>
             <Image Source="dotnet_bot.png"
                    HeightRequest="100"
                    WidthRequest="100"
                    HorizontalOptions="Center" 
                    Margin="0,0,0,10"/>
 
-            <Label Text="TRINI APP"
+            <Label Text="Test"
                    TextColor="White"
                    FontSize="20"
                    FontAttributes="Bold"
-                   HorizontalOptions="Center" />
-        </VerticalStackLayout>
+                   HorizontalOptions="Center" 
+                   />
+
+        </Grid>
     </Shell.FlyoutHeader>
 
     <FlyoutItem Title="Dashboard" Icon="dotnet_bot.png">
