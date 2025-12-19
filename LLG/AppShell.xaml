@@ -11,7 +11,14 @@
     Shell.ForegroundColor="White"
     
     >
-
+    <Shell.FlyoutBackground>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+            <GradientStop Color="#121212" Offset="0.0" />
+            <GradientStop Color="#42A5F5" Offset="1.0" />
+        </LinearGradientBrush>
+    </Shell.FlyoutBackground>
+    
+    
     <Shell.FlyoutHeader>
         <VerticalStackLayout 
             BackgroundColor="#1976D2"
