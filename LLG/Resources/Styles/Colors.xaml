@@ -15,7 +15,7 @@
     <Color x:Key="PrimaryTeal">#009688</Color>
     <Color x:Key="AccentYellow">#FFC107</Color>
     <Color x:Key="AccentRed">#F44336</Color>
-    <Color x:Key="DarkBackground">#121212</Color>
+    <Color x:Key="DarkBackground">#1a428e</Color>
     <Color x:Key="CardBackground">#1E1E1E</Color>
     <Color x:Key="TextPrimary">#FFFFFF</Color>
 

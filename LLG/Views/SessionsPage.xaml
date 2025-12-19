@@ -10,7 +10,7 @@
                         Margin="0,0,0,80">
             <CollectionView.ItemTemplate>
                 <DataTemplate>
-                    <Border StrokeShape="RoundRectangle 10" 
+                    <Border StrokeShape="RoundRectangle 25" 
                             BackgroundColor="{StaticResource CardBackground}"
                             Padding="10" 
                             Margin="10,5">
