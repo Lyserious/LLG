@@ -39,5 +39,11 @@ public partial class SettingsPage : ContentPage
     {
         base.OnDisappearing();
         Shell.Current.FlyoutIsPresented = true;
+
+#if WINDOWS || MACCATALYST
+    Shell.Current.FlyoutBehavior = FlyoutBehavior.Locked;
+#else
+        Shell.Current.FlyoutBehavior = FlyoutBehavior.Flyout;
+#endif
     }
 }

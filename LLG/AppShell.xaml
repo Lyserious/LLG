@@ -8,8 +8,10 @@
     Shell.TitleColor="White"    
     Shell.BackgroundColor="Transparent"
     Shell.NavBarIsVisible="False"
+    Shell.FlyoutBehavior="{OnPlatform WinUI=Locked, MacCatalyst=Locked, Android=Flyout, iOS=Flyout}"
     Shell.FlyoutBackgroundColor="Transparent"
     >
+    
     
     
     <Shell.Background>
