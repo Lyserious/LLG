@@ -3,10 +3,32 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LLG.Views.ProjectsPage"
              Title="ProjectsPage">
-    <VerticalStackLayout>
-        <Label 
-            Text="Coming soon!"
-            VerticalOptions="Center" 
-            HorizontalOptions="Center" />
-    </VerticalStackLayout>
+
+    <Grid RowDefinitions="Auto, *,*,*">
+
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" >
+                <GradientStop Color="Black" Offset="0.15" />
+                <GradientStop Color="#42A5F5" Offset="1.0" />
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Label Grid.Row="0" 
+               Text="Projets" 
+               Padding="20"
+               FontSize="32"
+               FontAttributes="Bold"
+               TextColor="White"/>
+
+        <BoxView Grid.Row="1" 
+                 Color="Transparent" 
+                 Margin="20" />
+
+        <Label Grid.Row="1" 
+               Text="Coming soon ! :) "
+               VerticalOptions="Center" 
+               HorizontalOptions="Center"
+               TextColor="#1565C0"/>
+
+    </Grid>
+    
 </ContentPage>

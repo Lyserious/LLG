@@ -3,9 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LLG.Views.SessionDetailPage"
              Title="Séance"
-             BackgroundColor="{StaticResource DarkBackground}">
+>
 
     <ScrollView>
+        <ScrollView.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="Black" Offset="0.15" />
+                <GradientStop Color="#42A5F5" Offset="1.0" />
+            </LinearGradientBrush>
+        </ScrollView.Background>
+
+
         <VerticalStackLayout Spacing="15" Padding="20">
 
             <Label Text="Infos Séance" TextColor="White" FontSize="18" FontAttributes="Bold"/>

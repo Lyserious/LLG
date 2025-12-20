@@ -3,45 +3,68 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LLG.Views.SessionsPage"
              Title="Mes Séances">
-    <Grid>
-        <CollectionView x:Name="SessionsList" 
-                        SelectionMode="Single"
-                        SelectionChanged="OnSessionSelected"
-                        Margin="0,0,0,80">
+    
+    
+    <Grid RowDefinitions="Auto, *">
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
+                <GradientStop Color="Black" Offset="0.15" />
+                <GradientStop Color="#42A5F5" Offset="1.0" />
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <Label
+        Grid.Row="0" 
+        Text="Sessions" 
+        Padding="20"
+        FontSize="32"
+        FontAttributes="Bold"
+        TextColor="White"
+    />
+
+        <CollectionView 
+        Grid.Row="1"
+        x:Name="SessionsList" 
+        SelectionMode="Single"
+        SelectionChanged="OnSessionSelected"
+        Margin="0,0,0,80">
+
             <CollectionView.ItemTemplate>
                 <DataTemplate>
                     <Border StrokeShape="RoundRectangle 25" 
-                            BackgroundColor="{StaticResource CardBackground}"
-                            Padding="10" 
-                            Margin="10,5">
+                         BackgroundColor="Transparent"
+                         Padding="10" 
+                         Margin="10,5">
                         <Grid ColumnDefinitions="*, Auto">
                             <VerticalStackLayout Grid.Column="0">
                                 <Label Text="{Binding DisplayTitle, TargetNullValue=' '}" 
-                                       TextColor="White" FontAttributes="Bold" FontSize="16"/>
+                                    TextColor="White" FontAttributes="Bold" FontSize="16"/>
                                 <Label Text="{Binding Date, StringFormat='{0:dd MMM yyyy}'}" 
-                                       TextColor="Gray" FontSize="12"/>
+                                    TextColor="Gray" FontSize="12"/>
                             </VerticalStackLayout>
                             <Label Grid.Column="1" 
-                                   Text="{Binding DurationMinutes, StringFormat='{0} min'}" 
-                                   TextColor="{StaticResource AccentYellow}" 
-                                   VerticalOptions="Center"/>
+                                Text="{Binding DurationMinutes, StringFormat='{0} min'}" 
+                                TextColor="{StaticResource AccentYellow}" 
+                                VerticalOptions="Center"/>
                         </Grid>
                     </Border>
                 </DataTemplate>
             </CollectionView.ItemTemplate>
+
         </CollectionView>
 
-        <Button Text="+"
-                Clicked="OnAddSessionClicked"
-                FontSize="30"
-                WidthRequest="60"
-                HeightRequest="60"
-                CornerRadius="30"
-                BackgroundColor="{StaticResource PrimaryTeal}"
-                TextColor="White"
-                VerticalOptions="End"
-                HorizontalOptions="End"
-                Margin="20"
-                Shadow="{Shadow Brush=Black, Offset='2,2', Opacity=0.5}"/>
+        <Button Grid.Row="0" Grid.RowSpan="2"
+            Text="+"
+            Clicked="OnAddSessionClicked"
+            FontSize="30"
+            WidthRequest="60"
+            HeightRequest="60"
+            CornerRadius="30"
+            BackgroundColor="{StaticResource PrimaryTeal}"
+            TextColor="White"
+            VerticalOptions="End"
+            HorizontalOptions="End"
+            Margin="20"
+            Shadow="{Shadow Brush=Black, Offset='2,2', Opacity=0.5}"/>
     </Grid>
 </ContentPage>

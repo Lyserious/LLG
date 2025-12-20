@@ -3,22 +3,30 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="LLG.Views.DashboardPage"
              Title="Dashboard"
-             BackgroundColor="White">
+             
+             >
 
     <Grid RowDefinitions="Auto, *,*,*">
-
+        
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="0,1" >
+                <GradientStop Color="Black" Offset="0.15" />
+                <GradientStop Color="#42A5F5" Offset="1.0" />
+            </LinearGradientBrush>
+        </Grid.Background>
         <Label Grid.Row="0" 
-               Text="Le contenu commence ici, tout en haut !" 
+               Text="Dashboard" 
                Padding="20"
-               FontSize="18"
-               TextColor="Black"/>
+               FontSize="32"
+               FontAttributes="Bold"
+               TextColor="White"/>
 
         <BoxView Grid.Row="1" 
-                 Color="#E3F2FD" 
+                 Color="Transparent" 
                  Margin="20" />
 
         <Label Grid.Row="1" 
-               Text="Zone qui remplit le reste de l'écran"
+               Text="Coming soon"
                VerticalOptions="Center" 
                HorizontalOptions="Center"
                TextColor="#1565C0"/>

@@ -72,7 +72,7 @@ public partial class SettingsViewModel : ObservableObject
         Preferences.Default.Set("UserHeight", UserHeight);
 
         // LOGIQUE INTELLIGENTE POUR LE MDP
-        // On ne le change QUE si l'utilisateur a écrit quelque chose dedans.
+        // On ne le change que si l'utilisateur a écrit quelque chose dedans.
         if (!string.IsNullOrWhiteSpace(UserPassword))
         {
             Preferences.Default.Set("UserPassword", UserPassword);
@@ -91,7 +91,7 @@ public partial class SettingsViewModel : ObservableObject
     private void Logout()
     {
         // 1. On efface la preuve de connexion
-        // (Tu peux choisir d'effacer aussi le Poids/Taille ou de les garder)
+        
         Preferences.Remove("UserName");
 
         // 2. On renvoie l'utilisateur sur la page de Login

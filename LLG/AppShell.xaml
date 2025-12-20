@@ -5,15 +5,25 @@
     xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
     xmlns:local="clr-namespace:LLG"
     xmlns:views="clr-namespace:LLG.Views"
+    Shell.TitleColor="White"    
+    Shell.BackgroundColor="Transparent"
+    Shell.NavBarIsVisible="False"
     Shell.FlyoutBehavior="{OnPlatform WinUI=Locked, MacCatalyst=Locked, Android=Flyout, iOS=Flyout}"
-    Shell.BackgroundColor="#1976D2"
-    Shell.TitleColor="White"
-    Shell.ForegroundColor="White"
-    Shell.FlyoutBackgroundColor="#121212"
+    Shell.FlyoutBackgroundColor="Transparent"
     >
+    
+    
+    
+    <Shell.Background>
+        <LinearGradientBrush StartPoint="1,0" EndPoint="0,1">
+            <GradientStop Color="Black" Offset="0.15" />
+            <GradientStop Color="#42A5F5" Offset="1.0" />
+        </LinearGradientBrush>
+    </Shell.Background>
+    
     <Shell.FlyoutBackground>
-        <LinearGradientBrush StartPoint="0,0" EndPoint="0,1">
-            <GradientStop Color="#121212" Offset="0.0" />
+        <LinearGradientBrush StartPoint="1,0" EndPoint="0,1">
+            <GradientStop Color="Black" Offset="0.15" />
             <GradientStop Color="#42A5F5" Offset="1.0" />
         </LinearGradientBrush>
     </Shell.FlyoutBackground>
