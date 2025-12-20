@@ -38,10 +38,11 @@ public partial class SettingsPage : ContentPage
     protected override void OnDisappearing()
     {
         base.OnDisappearing();
-        Shell.Current.FlyoutIsPresented = true;
+
 
 #if WINDOWS || MACCATALYST
     Shell.Current.FlyoutBehavior = FlyoutBehavior.Locked;
+    Shell.Current.FlyoutIsPresented = true;
 #else
         Shell.Current.FlyoutBehavior = FlyoutBehavior.Flyout;
 #endif
